@@ -27,8 +27,11 @@ app.use("/api/payments", require("./routers/paymentRouter"));
 
 // test:
 app.get("/test", (req, res) => {
-  res.render("HEllo, its working!!!");
+  res.send(
+    `Hello World, from express, ${JSON.stringify(process.env, null, 2)}`
+  );
 });
+
 
 // Production server:
 // if (process.env.NODE_ENV === "PRODUCTION") {
