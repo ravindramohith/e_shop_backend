@@ -25,6 +25,11 @@ app.use("/api/orders", require("./routers/orderRouter"));
 app.use("/api/reviews", require("./routers/reviewRouter"));
 app.use("/api/payments", require("./routers/paymentRouter"));
 
+// test:
+app.get("/test", (req, res) => {
+  res.render("HEllo, its working!!!");
+});
+
 // Production server:
 // if (process.env.NODE_ENV === "PRODUCTION") {
 //   // Serve the built React app
