@@ -24,5 +24,7 @@ jobs:
    steps:
      - name: Pull image from DockerHUB
        run: docker pull ravindramohith/e_shop_backend:latest
+     - name: Remove existing container
+       run: docker stop nodejs-container && docker rm nodejs-container
      - name: Run docker container
        run: docker run -d -p 4444:4444 --name nodejs-container ravindramohith/e_shop_backend:latest
